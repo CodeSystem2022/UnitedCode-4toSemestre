@@ -23,6 +23,7 @@
 | **Semana** | 💡 **Scrum Master** 💡    |
 |----------------------|----------------------|
 |  1  | *Degastaldi, Fernanda Lucía* |
+|  2  | *Garayalde Borges, Rodrigo* |
 
 
 
