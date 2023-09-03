@@ -1,0 +1,44 @@
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+
+package org.springframework.data.jpa.repository;
+
+import java.util.List;
+import org.sprindframework. data. domain. Example;
+import org.springframework.data.domain.Sort;
+import org.springframework. data.repository. ListCrudRepository;
+importorg.springframework.data.repository.ListPagingAndSortingRepository;
+importorg.springframework.data.repository.NoRepositoryBean;
+importorg.springframework.data.repository.query.QueryByExampleExecutor;
+
+@NoRepositoryBean
+
+public interface JpaRepository<T, ID> extends ListCrudRepository<T, ID>, ListPagingAndSort;
+  void flush();
+  <S extends T> S saveAndFlush (S entity);
+  <S extends T> List<S> saveAllAndFlush (Iterable<S> entities);
+
+  @Deprecated
+  default void deleteInBatch (Iterable<T> entities) {
+    this.deleteAllInBatch (entities);
+  }
+
+  void deleteAllInBatch (Iterable<T> entities);
+
+  void deleteAllByIdInBatch(Iterable<ID> ids);
+
+  void deleteAllInBatch();
+
+  @Deprecated
+  T getOne (ID id);
+
+  @Deprecated
+  T getByld(ID id);
+
+  T getReferenceByld(ID id);
+
+  <S extends T> List<S> findAll (Example<S> example)
+
+  <S extends T> List<S> findALl(Example<S> example, Sort sort);
+
+}
