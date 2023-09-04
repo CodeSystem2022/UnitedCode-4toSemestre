@@ -1,4 +1,6 @@
 const shopContent = document.getElementById("shopContent");
+const cart = [];//Este es nuestro carrito, un array vacio
+
 productos.forEach((product) =>{
     const content = document.createElement("div");
     content.innerHTML = `
@@ -7,4 +9,22 @@ productos.forEach((product) =>{
     <p>${product.price}$</p>
     `;
     shopContent.append(content);
-})
+
+    const buybutton = document.createElement("button");
+    buybutton.innerText = "Comprar";
+
+    content.append(buybutton);
+
+    buybutton.addEventListener("click",()=>{
+        cart.push({
+            id:product.id,
+            productName: product.productName,
+            price: product.price,
+            quanty: product.quanty,
+            img: product.img,
+        })
+        console.log(cart)
+    
+    })
+
+});
