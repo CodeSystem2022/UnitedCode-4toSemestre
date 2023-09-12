@@ -18,6 +18,35 @@ print(f'valor: {valor}, Resultado: {resultado}')
 
 
 
+# Tipo colecciones -> False para colecciones vacias
+# Tipo colecciones -> True para todas las demás
+# Lista
+valor = []
+resultado = bool(valor)
+print(f'valor de una lista vacia: {valor}, resultado: {resultado}')
+
+valor = [5,7,9]
+resultado = bool(valor)
+print(f'valor de una lista con elementos: {valor}, resultado: {resultado}')
+
+# Tupla
+valor = ()
+resultado = bool(valor)
+print(f'valor de una tupla vacía: {valor}, resultado: {resultado}')
+
+valor = (3,)
+resultado = bool(valor)
+print(f'valor de una tupla con elementos: {valor}, resultado: {resultado}')
+
+# Diccionario
+valor = {}
+resultado = bool(valor)
+print(f'valor de un diccionario vacio: {valor}, resultado: {resultado}')
+
+valor = {'Nombre': 'Enzo', 'Apellido': 'Fernandez'}
+resultado = bool(valor)
+print(f'valor de un diccionario con elementos: {valor}, resultado: {resultado}')
+
 
 
 
