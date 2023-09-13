@@ -19,7 +19,8 @@ public class EstudianteServicio implements IEstudianteServicio {
     
     @Override
     public Estudiante buscarEstudiantePorId(Integer idEstudiante) {
-        return null;
+        Estudiantes2022 estudiante = estudianteRepositorio.findById(idestudiantes2022).orElse(null);
+        return estudiante;
     }
     
     @Override
