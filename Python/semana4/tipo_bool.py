@@ -12,6 +12,15 @@ print(f'valor: {valor}, Resultado: {resultado}')
 
 
 
+# ciclos
+variable = 17
+while variable:
+    print('regresa verdadero')
+    break
+else:
+    print('regresa falso')
+
+
 
 
 
