@@ -24,7 +24,9 @@
 |----------------------|----------------------|
 |  1  | *Degastaldi, Fernanda Lucía* |
 |  2  | *Garayalde Borges, Rodrigo* |
-|  3  |  *Lopez, Debora Katerine* |
+|  3  | *Lopez, Debora Katerine* |
+|  4  | *Olea, Maria Eugenia* |
+|  5  | *Cabrera, Angel Gabriel* |
 
 
 <br> ![motion-grafic](https://user-images.githubusercontent.com/69828273/232174796-797d2ac4-2b09-4353-a18e-762930d92002.gif)
