@@ -14,3 +14,77 @@ increse.addEventListener('click', () => {
 }) 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const deleteCartProduct =(id) => {
+    const foundId = cart.findIndex((Element)=> Element.id === id);
+    cart.splice(foundId, 1);
+    displayCart();
+};
