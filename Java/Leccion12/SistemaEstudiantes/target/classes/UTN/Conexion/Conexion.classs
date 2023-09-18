@@ -1,1 +1,28 @@
+package UTN.Conexion;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Conexion {
+    public Conexion() {
+    }
+
+    public static Connection getConnection() {
+        Connection conexion = null;
+        String baseDedatos = "estudiantes";
+        String url = "jdbc:mysql://localhost:3306/" + baseDedatos;
+        String usuario = "root";
+        String password = "admin";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexion = DriverManager.getConnection(url, usuario, password);
+        } catch (SQLException | ClassNotFoundException var6) {
+            System.out.println("Ocurrio un error en la conexion: " + var6.getMessage());
+        }
+
+        return conexion;
+    }
+}
 
