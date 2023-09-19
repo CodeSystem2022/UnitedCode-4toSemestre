@@ -20,7 +20,7 @@ public class Estudiantes2022 {
     //Primero vamos a agregar atributos
     @Id //Este id es para que vaya agregando el orden del numero de la llave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEstudiante;
+    private Integer idestudiantes2022;
     private String nombre;
     private String apellido;
     private String telefono;
