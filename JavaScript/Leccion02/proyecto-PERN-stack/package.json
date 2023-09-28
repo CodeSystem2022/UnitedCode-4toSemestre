@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-pern-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "nodemon": "^3.0.1"
+  }
+}
