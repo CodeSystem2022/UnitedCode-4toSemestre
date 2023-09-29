@@ -25,3 +25,16 @@ public class Estudiante {
     private String email;
 
 }
+    String nl = System.lineSeparator();
+
+    public static void main(String[] args) {
+        logger.info("Iniciando la aplicación...");
+        //Levantar la fabrica de Spring
+        SpringApplicaction.run(EstudiantesApplication.class, args);
+        logger.info("Aplicación Finalizada!");
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        logger.info("Ejecutando el   método run de Spring...");
+    }
