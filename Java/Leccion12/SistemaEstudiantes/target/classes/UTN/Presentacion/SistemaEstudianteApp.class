@@ -1,0 +1,123 @@
+package UTN.Presentacion;
+
+import UTN.datos.EstudianteDAO;
+import UTN.dominio.Estudiante;
+import java.io.PrintStream;
+import java.util.List;
+import java.util.Objects;
+import java.util.Scanner;
+
+public class SistemaEstudianteApp {
+    public SistemaEstudianteApp() {
+    }
+
+    public static void main(String[] args) {
+        boolean salir = false;
+        Scanner consola = new Scanner(System.in);
+        EstudianteDAO estudianteDao = new EstudianteDAO();
+
+        while(!salir) {
+            try {
+                mostrarMenu();
+                salir = ejecutarOpciones(consola, estudianteDao);
+            } catch (Exception var5) {
+                System.out.println("Ocurrio un error al ejecutar la operacion: " + var5.getMessage());
+            }
+        }
+
+    }
+
+    private static void mostrarMenu() {
+        System.out.println("*********** SISTEMA DE ESTUDIANTES ***********\n 1. Listar Estudiante\n 2. Buscar Estudiante\n 3. Agregar Estudiante\n 4. Modificar Estudiante\n 5. Eliminar Estudiante\n 6. Salir\n\n Elige una opcion:\n");
+    }
+
+    private static boolean ejecutarOpciones(Scanner consola, EstudianteDAO estudianteDAO) {
+        int opcion = Integer.parseInt(consola.nextLine());
+        boolean salir = false;
+        int idEstudiante;
+        Estudiante estudiante;
+        boolean eliminado;
+        String telefono;
+        String nombre;
+        String apellido;
+        switch (opcion) {
+            case 1:
+                System.out.println("Listado de Estudiantes...");
+                List<Estudiante> estudiantes = estudianteDAO.listarEstudiantes();
+                PrintStream var10001 = System.out;
+                Objects.requireNonNull(var10001);
+                estudiantes.forEach(var10001::println);
+                break;
+            case 2:
+                System.out.println("Introduce el id_estudiante a buscar: ");
+                idEstudiante = Integer.parseInt(consola.nextLine());
+                estudiante = new Estudiante(idEstudiante);
+                eliminado = estudianteDAO.buscarEstudiantePorId(estudiante);
+                if (eliminado) {
+                    System.out.println("Estudiante encontrado: " + String.valueOf(estudiante));
+                } else {
+                    System.out.println("Estudiante NO encontrado: " + String.valueOf(estudiante));
+                }
+                break;
+            case 3:
+                System.out.println("Agregar estudiante: ");
+                System.out.println("Nombre: ");
+                String nombre = consola.nextLine();
+                System.out.println("Apellido: ");
+                nombre = consola.nextLine();
+                System.out.println("Telefono: ");
+                apellido = consola.nextLine();
+                System.out.println("Telefono: ");
+                telefono = consola.nextLine();
+                System.out.println("Email: ");
+                Estudiante estudiante = new Estudiante(nombre, nombre, apellido, telefono);
+                boolean agregado = estudianteDAO.agregarEstudiante(estudiante);
+                if (agregado) {
+                    System.out.println("Estudiante agregado: " + String.valueOf(estudiante));
+                } else {
+                    System.out.println("Estudiante NO agregado: " + String.valueOf(estudiante));
+                }
+                break;
+            case 4:
+                System.out.println("Modificar estudiante: ");
+                System.out.println("Id del estudiante: ");
+                idEstudiante = Integer.parseInt(consola.nextLine());
+                System.out.println("Nombre: ");
+                nombre = consola.nextLine();
+                System.out.println("Apellido: ");
+                apellido = consola.nextLine();
+                System.out.println("Telefono: ");
+                telefono = consola.nextLine();
+                System.out.println("Email: ");
+                String email = consola.nextLine();
+                Estudiante estudiante = new Estudiante(idEstudiante, nombre, apellido, telefono, email);
+                boolean modificado = estudianteDAO.modificarEstudiante(estudiante);
+                if (modificado) {
+                    System.out.println("Estudiante modificado: " + String.valueOf(estudiante));
+                } else {
+                    System.out.println("Estudiante No modificado: " + String.valueOf(estudiante));
+                }
+                break;
+            case 5:
+                System.out.println("Eliminar estudiante: ");
+                System.out.println("Id del estudiante: ");
+                idEstudiante = Integer.parseInt(consola.nextLine());
+                estudiante = new Estudiante(idEstudiante);
+                eliminado = estudianteDAO.eliminarEstudiante(estudiante);
+                if (eliminado) {
+                    System.out.println("El estudiante ha sido eliminado; " + String.valueOf(estudiante));
+                } else {
+                    System.out.println("El estudiante NO ha sido eliminado: " + String.valueOf(estudiante));
+                }
+                break;
+            case 6:
+                System.out.println("Hasta pronto!!! ");
+                salir = true;
+                break;
+            default:
+                System.out.println("La opcion ingresada es incorrecta, vuelva a ingresar una opcion");
+        }
+
+        return salir;
+    }
+}
