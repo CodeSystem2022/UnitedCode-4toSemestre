@@ -9,6 +9,15 @@ valor = 0.1
 resultado = bool(valor)
 print(f'valor: {valor}, Resultado: {resultado}')
 
+# Tipo string -> False '', True demás valores
+valor = ''
+resultado = bool(valor)
+print(f'valor: {valor}, Resultado: {resultado}')
+
+valor = 'Hola'
+resultado = bool(valor)
+print(f'valor: {valor}, Resultado: {resultado}')
+
 
 
 

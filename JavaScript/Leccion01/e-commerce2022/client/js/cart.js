@@ -166,4 +166,4 @@ const displayCartCounter = () => {
   } else{
     cartCounter.style.display = "none";
   }  
-}
+};
