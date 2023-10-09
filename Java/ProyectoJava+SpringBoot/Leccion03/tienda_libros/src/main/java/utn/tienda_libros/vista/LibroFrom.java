@@ -5,12 +5,15 @@ import org.springframework.stereotype.Component;
 import utn.tienda_libros.servicio.LibroServicio;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 @Component
 public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
+    private JTable tablaLibros;
+    private DefaultTableModel tablaModeloLibros;
 
     @Autowired
     public LibroFrom(LibroServicio libroServicio){
@@ -32,4 +35,7 @@ public class LibroFrom extends JFrame {
 
     }
 
+    private void createUIComponents(){
+        //TOD: plase custon
+    }
 }
