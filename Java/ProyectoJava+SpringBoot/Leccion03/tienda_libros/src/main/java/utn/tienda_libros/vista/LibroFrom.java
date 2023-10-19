@@ -37,11 +37,32 @@ public class LibroFrom extends JFrame {
     }
 
     private void createUIComponents() {
-       this.tablaModeloLibros =new DefaultTableModel(0, 5);
-       String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias"};
-       this.tablaModeloLibros.setColumnIdentifiers(cabecera);
-       //Instanciar el objeto de JTable
+        this.tablaModeloLibros = new DefaultTableModel(0, 5);
+        String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias"};
+        this.tablaModeloLibros.setColumnIdentifiers(cabecera);
+        //Instanciar el objeto de JTable
         this.tablalibros = new JTable(tablaModeloLibros);
+        listarLibros();
+
+
+    }
+
+    private void listarLibros(){
+        //Limpiar la tabla
+        tablaModeloLibros.setRowCount(0);
+        //Obtener los libros de la Base de Datos
+        var libros = libroServicio.listarLibros();
+        //Iteramos cada libro
+        libros.forEach(libro -> {//Funcion lambda
+            //Creamos cada registro para agrearlos a la tabla
+            Object [] renglonLibro = {
+                    libro.getIdLibro(),
+                    libro.getAutor(),
+                    libro.getPrecio(),
+                    libro.getExistencias(),
+            };
+        });
+
     }
 }
 
