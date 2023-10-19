@@ -12,31 +12,36 @@ import java.awt.*;
 public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
-    private JTable tablaLibros;
+    private JTable tablalibros;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
-    public LibroFrom(LibroServicio libroServicio){
+    public  LibroFrom(LibroServicio libroServicio){
         this.libroServicio = libroServicio;
         iniciarForma();
     }
 
-    private void iniciarForma(){
+    private void  iniciarForma(){
         setContentPane(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setSize(900,700);
-        //Para obtener las dimenciones de la ventana
+        ///Para obtener les dimenciones de la ventana
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension tamanioPantalla = toolkit.getScreenSize();
         int x = (tamanioPantalla.width - getWidth()/2);
         int y = (tamanioPantalla.height - getHeight()/2);
         setLocation(x, y);
 
+
     }
 
-    private void createUIComponents(){
-        //TOD: plase custon
-        
+    private void createUIComponents() {
+       this.tablaModeloLibros =new DefaultTableModel(0, 5);
+       String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias"};
+       this.tablaModeloLibros.setColumnIdentifiers(cabecera);
+       //Instanciar el objeto de JTable
+        this.tablalibros = new JTable(tablaModeloLibros);
     }
 }
+
