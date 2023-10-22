@@ -31,5 +31,6 @@
 |  7  | *Degastaldi, Fernanda Lucía* |
 |  8  | *Aparicio, Nicolás* |
 |  9  | *Cruzate, Luciano* |
+|  10  | *Lopez, Debora Katerine* | 
 
 <br> ![motion-grafic](https://user-images.githubusercontent.com/69828273/232174796-797d2ac4-2b09-4353-a18e-762930d92002.gif)
