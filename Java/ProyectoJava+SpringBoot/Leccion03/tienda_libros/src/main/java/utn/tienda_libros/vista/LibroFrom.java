@@ -8,12 +8,14 @@ import utn.tienda_libros.servicio.LibroServicio;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 @Component
 public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
-    private JTable tablalibros;
+    private JTable tablaLibros;
     private JTextField libroTexto;
     private JTextField autorTexto;
     private JTextField precioTexto;
@@ -41,7 +43,6 @@ public class LibroFrom extends JFrame {
         int x = (tamanioPantalla.width - getWidth()/2);
         int y = (tamanioPantalla.height - getHeight()/2);
         setLocation(x, y);
-
 
     }
 
@@ -73,7 +74,6 @@ public class LibroFrom extends JFrame {
         autorTexto.setText("");
         precioTexto.setText("");
         existenciasTexto.setText("");
-
     }
 
     private void mostrarMensaje(String mensaje){
@@ -83,13 +83,11 @@ public class LibroFrom extends JFrame {
 
     private void createUIComponents() {
         this.tablaModeloLibros = new DefaultTableModel(0, 5);
-        String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias"};
+        String[] cabecera = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
         //Instanciar el objeto de JTable
-        this.tablalibros = new JTable(tablaModeloLibros);
+        this.tablaLibros = new JTable(tablaModeloLibros);
         listarLibros();
-
-
     }
 
     private void listarLibros(){
@@ -99,9 +97,10 @@ public class LibroFrom extends JFrame {
         var libros = libroServicio.listarLibros();
         //Iteramos cada libro
         libros.forEach((libro) -> {//Funcion lambda
-            //Creamos cada registro para agrearlos a la tabla
+            //Creamos cada registro para agregarlos a la tabla
             Object [] renglonLibro = {
                     libro.getIdLibro(),
+                    libro.getNombreLibro(),
                     libro.getAutor(),
                     libro.getPrecio(),
                     libro.getExistencias(),
@@ -111,5 +110,3 @@ public class LibroFrom extends JFrame {
 
     }
 }
-
-
