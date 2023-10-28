@@ -30,9 +30,6 @@ public class LibroFrom extends JFrame {
         this.libroServicio = libroServicio;
         iniciarForma();
         agregarButton.addActionListener(e -> agregarLibro());
-        agregarButton.addActionListener(e -> {
-
-        });
     }
 
     private void  iniciarForma(){
@@ -77,7 +74,6 @@ public class LibroFrom extends JFrame {
         autorTexto.setText("");
         precioTexto.setText("");
         existenciasTexto.setText("");
-
     }
 
     private void mostrarMensaje(String mensaje){
@@ -92,8 +88,6 @@ public class LibroFrom extends JFrame {
         //Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
         listarLibros();
-
-
     }
 
     private void listarLibros(){
@@ -116,5 +110,3 @@ public class LibroFrom extends JFrame {
 
     }
 }
-
-
