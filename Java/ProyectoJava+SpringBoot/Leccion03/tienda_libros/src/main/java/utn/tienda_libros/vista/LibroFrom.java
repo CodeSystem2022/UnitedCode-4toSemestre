@@ -13,12 +13,21 @@ public class LibroFrom extends JFrame {
     LibroServicio libroServicio;
     private JPanel panel;
     private JTable tablaLibros;
+    private JTextField idTexto;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
     public LibroFrom(LibroServicio libroServicio){
         this.libroServicio = libroServicio;
         iniciarForma();
+
+    //falta codigo aca
+
+
+
+
+     cargarLibroSeleccionado();
+
     }
 
     private void iniciarForma(){
@@ -36,6 +45,48 @@ public class LibroFrom extends JFrame {
     }
 
     private void createUIComponents(){
+        idTexto = new JTextField("");
+        idTexto.setVisible(false);
         //TOD: plase custon
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private void cargarLibroSeleccionado(){
+        // Los indices de la columnas inicializan en 0
+        var renglon = tablaLibros.getSelectedRow();
+        if(renglon != -1){
+            String idLibro = tablaLibros.getModel().getValueAt(renglon, 0).toString();
+        }
+    }
+
+
 }
